@@ -43,7 +43,7 @@
         </android.support.v7.widget.AppCompatSeekBar>
 
         <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/pause"
+            android:id="@+id/input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

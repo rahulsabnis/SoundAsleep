@@ -89,38 +89,14 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
 //        numberPicker.setMaxValue(60);
 //        numberPicker.setMinValue(5);
 
-        FancyButton fancy = (FancyButton) findViewById(R.id.pause);
+        FancyButton fancy = (FancyButton) findViewById(R.id.input);
         fancy.setText("Start Music!");
         fancy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                mPlayer.playUri(new Player.OperationCallback() {
-                    @Override
-                    public void onSuccess() {
-                        mPlayer.setShuffle(null, true);
-                        mPlayer.skipToNext(null);
-                    }
-
-                    @Override
-                    public void onError(Error error) {
-                        AlertDialog dialog = new AlertDialog.Builder(MainActivity.this).setTitle("Error").
-                                setMessage("An error has occurred on playback. Please check your " +
-                                        "internet connectivity!").create();
-                        dialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                    }
-                                });
-                        dialog.show();
-                    }
-                }, "spotify:user:allgaminglegend:playlist:7M2BTQqhtBsQ7Ru2ljl7W8", 0, 0);
-//                if (mPlayer.getPlaybackState().isPlaying) {
-//                    mPlayer.pause(null);
-//                } else {
-//                    mPlayer.resume(null);
-//                }
+                Intent intent = new Intent(MainActivity.this, SongActivity.class);
+                intent.putExtra("time", numberPicker.getProgress() + 5);
+                startActivity(intent);
             }
         });
     }
