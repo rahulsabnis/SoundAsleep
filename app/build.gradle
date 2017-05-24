@@ -41,4 +41,6 @@ dependencies {
 
     // This library handles music playback
     compile 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
+
+    compile 'com.github.medyo:fancybuttons:1.8.3'
 }
